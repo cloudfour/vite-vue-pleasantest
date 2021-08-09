@@ -12,7 +12,9 @@ test(
 	  `);
     const buttonEl = await screen.getByRole("button", { name: /count/i });
     await expect(buttonEl).toHaveTextContent(/count is: 0/i);
-    user.click(buttonEl);
+    await user.click(buttonEl);
+    await user.click(buttonEl);
+    await user.click(buttonEl);
     await expect(buttonEl).toHaveTextContent(/count is: 3/i);
   })
 );
